@@ -40,4 +40,9 @@ static Connection conn;
 		
 		}
 
+	static void closeConnection() {
+		// TODO Auto-generated method stub
+		
+	}
+
 }

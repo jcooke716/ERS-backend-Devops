@@ -60,7 +60,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 						
 				while (rs.next())
 					 expensePojo = new ExpensePojo(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getString(4), 
-								rs.getString(5), rs.getString(6), rs.getString(7));
+								rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
 					
 						allPending.add(expensePojo);
 			
@@ -95,7 +95,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 					
 			while (rs.next())
 				 expensePojo = new ExpensePojo(rs.getInt(1), rs.getString(2), rs.getDouble(3), rs.getString(4), 
-							rs.getString(5), rs.getString(6), rs.getString(7));
+							rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8));
 				
 					allResolved.add(expensePojo);
 		
@@ -130,7 +130,7 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		
 		String queryUpdate = "UPDATE employee_details SET employee_password=" + "'" + employeePojo.getEmployeePassword() + "'" + "AND emp_first_name=" + "'" + employeePojo.getEmployeeFirstName()+ "'"
 				        + "AND emp_last_name=" + "'" + employeePojo.getEmployeeLastName() + "'" + "AND emp_contact=" + employeePojo.getEmployeeContact() + "AND emp_email=" + 
-				        "'" + employeePojo.getEmployeeEmail() + "'" + "AND emp_address=" + "'" + employeePojo.getEmployeeAddress() + "'" + "WHERE emp_id=" + "'" + employeePojo.getEmployeeId();
+				        "'" + employeePojo.getEmployeeEmail() + "'" + "AND emp_address=" + "'" + employeePojo.getEmployeeAddress() + "'" + "WHERE emp_id=" + employeePojo.getEmployeeId();
 		
 		try {
 			int rowsTo = stmt.executeUpdate(queryUpdate);

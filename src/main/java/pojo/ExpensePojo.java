@@ -6,7 +6,8 @@ public class ExpensePojo {
 	private String expenseEmp;
 	private double expenseAmount;
 	private String expenseReason;
-	private String expenseTime;
+	private String expenseCreated;
+	private String expenseResolved;
 	private String expenseAdmin;
 	private String expenseStatus;
 	
@@ -16,19 +17,22 @@ public class ExpensePojo {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
-	public ExpensePojo(int expenseId, String expenseEmp, double expenseAmount, String expenseReason, String expenseTime,
-			String expenseAdmin, String expenseStatus) {
+
+
+
+	public ExpensePojo(int expenseId, String expenseEmp, double expenseAmount, String expenseReason,
+			String expenseCreated, String expenseResolved, String expenseAdmin, String expenseStatus) {
 		super();
 		this.expenseId = expenseId;
 		this.expenseEmp = expenseEmp;
 		this.expenseAmount = expenseAmount;
 		this.expenseReason = expenseReason;
-		this.expenseTime = expenseTime;
+		this.expenseCreated = expenseCreated;
+		this.expenseResolved = expenseResolved;
 		this.expenseAdmin = expenseAdmin;
 		this.expenseStatus = expenseStatus;
 	}
+
 
 
 	public int getExpenseId() {
@@ -36,9 +40,11 @@ public class ExpensePojo {
 	}
 
 
+
 	public void setExpenseId(int expenseId) {
 		this.expenseId = expenseId;
 	}
+
 
 
 	public String getExpenseEmp() {
@@ -46,9 +52,11 @@ public class ExpensePojo {
 	}
 
 
+
 	public void setExpenseEmp(String expenseEmp) {
 		this.expenseEmp = expenseEmp;
 	}
+
 
 
 	public double getExpenseAmount() {
@@ -56,9 +64,11 @@ public class ExpensePojo {
 	}
 
 
+
 	public void setExpenseAmount(double expenseAmount) {
 		this.expenseAmount = expenseAmount;
 	}
+
 
 
 	public String getExpenseReason() {
@@ -66,19 +76,35 @@ public class ExpensePojo {
 	}
 
 
+
 	public void setExpenseReason(String expenseReason) {
 		this.expenseReason = expenseReason;
 	}
 
 
-	public String getExpenseTime() {
-		return expenseTime;
+
+	public String getExpenseCreated() {
+		return expenseCreated;
 	}
 
 
-	public void setExpenseTime(String expenseTime) {
-		this.expenseTime = expenseTime;
+
+	public void setExpenseCreated(String expenseCreated) {
+		this.expenseCreated = expenseCreated;
 	}
+
+
+
+	public String getExpenseResolved() {
+		return expenseResolved;
+	}
+
+
+
+	public void setExpenseResolved(String expenseResolved) {
+		this.expenseResolved = expenseResolved;
+	}
+
 
 
 	public String getExpenseAdmin() {
@@ -86,9 +112,11 @@ public class ExpensePojo {
 	}
 
 
+
 	public void setExpenseAdmin(String expenseAdmin) {
 		this.expenseAdmin = expenseAdmin;
 	}
+
 
 
 	public String getExpenseStatus() {
@@ -96,17 +124,22 @@ public class ExpensePojo {
 	}
 
 
+
 	public void setExpenseStatus(String expenseStatus) {
 		this.expenseStatus = expenseStatus;
 	}
 
 
+
 	@Override
 	public String toString() {
 		return "ExpensePojo [expenseId=" + expenseId + ", expenseEmp=" + expenseEmp + ", expenseAmount=" + expenseAmount
-				+ ", expenseReason=" + expenseReason + ", expenseTime=" + expenseTime + ", expenseAdmin=" + expenseAdmin
-				+ ", expenseStatus=" + expenseStatus + "]";
+				+ ", expenseReason=" + expenseReason + ", expenseCreated=" + expenseCreated + ", expenseResolved="
+				+ expenseResolved + ", expenseAdmin=" + expenseAdmin + ", expenseStatus=" + expenseStatus + "]";
 	}
+	
+	
+	
 	
 	
 	

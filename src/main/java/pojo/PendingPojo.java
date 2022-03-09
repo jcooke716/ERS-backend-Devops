@@ -1,28 +1,32 @@
 package pojo;
 
+import java.sql.Timestamp;
+
 public class PendingPojo {
 	
 	private int pendingId;
 	private int pendingRequest;
 	private double pendingAmount;
-	private String pendReason;
-	private String pendRequestTime;
-	private int pendResponse;
-	private String pendRequestStatus;
+	private String pendingReason;
+	private String pendingCreated;
+	private String pendingResolved;
+	private int pendingResponse;
+	private String pendingStatus;
 	public PendingPojo() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public PendingPojo(int pendingId, int pendingRequest, double pendingAmount, String pendReason,
-			String pendRequestTime, int pendResponse, String pendRequestStatus) {
+	public PendingPojo(int pendingId, int pendingRequest, double pendingAmount, String pendingReason,
+			String pendingCreated, String pendingResolved, int pendingResponse, String pendingStatus) {
 		super();
 		this.pendingId = pendingId;
 		this.pendingRequest = pendingRequest;
 		this.pendingAmount = pendingAmount;
-		this.pendReason = pendReason;
-		this.pendRequestTime = pendRequestTime;
-		this.pendResponse = pendResponse;
-		this.pendRequestStatus = pendRequestStatus;
+		this.pendingReason = pendingReason;
+		this.pendingCreated = pendingCreated;
+		this.pendingResolved = pendingResolved;
+		this.pendingResponse = pendingResponse;
+		this.pendingStatus = pendingStatus;
 	}
 	public int getPendingId() {
 		return pendingId;
@@ -42,38 +46,47 @@ public class PendingPojo {
 	public void setPendingAmount(double pendingAmount) {
 		this.pendingAmount = pendingAmount;
 	}
-	public String getPendReason() {
-		return pendReason;
+	public String getPendingReason() {
+		return pendingReason;
 	}
-	public void setPendReason(String pendReason) {
-		this.pendReason = pendReason;
+	public void setPendingReason(String pendingReason) {
+		this.pendingReason = pendingReason;
 	}
-	public String getPendRequestTime() {
-		return pendRequestTime;
+	public String getPendingCreated() {
+		return pendingCreated;
 	}
-	public void setPendRequestTime(String pendRequestTime) {
-		this.pendRequestTime = pendRequestTime;
+	public void setPendingCreated(String pendingCreated) {
+		this.pendingCreated = pendingCreated;
 	}
-	public int getPendResponse() {
-		return pendResponse;
+	public String getPendingResolved() {
+		return pendingResolved;
 	}
-	public void setPendResponse(int pendResponse) {
-		this.pendResponse = pendResponse;
+	public void setPendingResolved(String pendingResolved) {
+		this.pendingResolved = pendingResolved;
 	}
-	public String getPendRequestStatus() {
-		return pendRequestStatus;
+	public int getPendingResponse() {
+		return pendingResponse;
 	}
-	public void setPendRequestStatus(String pendRequestStatus) {
-		this.pendRequestStatus = pendRequestStatus;
+	public void setPendingResponse(int pendingResponse) {
+		this.pendingResponse = pendingResponse;
 	}
+	public String getPendingStatus() {
+		return pendingStatus;
+	}
+	public void setPendingStatus(String pendingStatus) {
+		this.pendingStatus = pendingStatus;
+	}
+	
 	
 	@Override
 	public String toString() {
 		return "PendingPojo [pendingId=" + pendingId + ", pendingRequest=" + pendingRequest + ", pendingAmount="
-				+ pendingAmount + ", pendReason=" + pendReason + ", pendRequestTime=" + pendRequestTime
-				+ ", pendResponse=" + pendResponse + ", pendRequestStatus=" + pendRequestStatus + "]";
+				+ pendingAmount + ", pendingReason=" + pendingReason + ", pendingCreated=" + pendingCreated
+				+ ", pendingResolved=" + pendingResolved + ", pendingResponse=" + pendingResponse + ", pendingStatus="
+				+ pendingStatus + "]";
 	}
 	
+		
 	
 
 }
