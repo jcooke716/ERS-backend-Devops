@@ -4,10 +4,11 @@ import java.util.List;
 
 import pojo.EmployeePojo;
 import pojo.ExpensePojo;
+import pojo.PendingPojo;
 
 public interface EmployeeDao {
 	
-	//Submit request ----> View employee info
+	//View employee info
 	EmployeePojo fetchEmployee(int employeeId);
 	
 	//View pending request ---
@@ -21,6 +22,9 @@ public interface EmployeeDao {
 	
 	//Update employee info ----> UPDATE * WHERE 
 	EmployeePojo updateEmployeeInfo(EmployeePojo employeePojo);
+	
+	//Submit request
+	PendingPojo submitRequest(PendingPojo pendingPojo);
 	
 
 }

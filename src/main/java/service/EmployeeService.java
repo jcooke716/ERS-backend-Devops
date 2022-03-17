@@ -4,6 +4,7 @@ import java.util.List;
 
 import pojo.EmployeePojo;
 import pojo.ExpensePojo;
+import pojo.PendingPojo;
 
 public interface EmployeeService {
 
@@ -21,6 +22,9 @@ public interface EmployeeService {
 		
 		//Update employee info ----> UPDATE * WHERE 
 		EmployeePojo updateEmployeeInfo(EmployeePojo employeePojo);
+		
+		//Submit request
+		PendingPojo submitRequest(PendingPojo pendingPojo);
 		
 	
 }

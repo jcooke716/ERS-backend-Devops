@@ -27,7 +27,7 @@ public class AdminDaoImpl implements AdminDao {
 			ResultSet rs = stmt.executeQuery(query);
 			if (rs.next()) {
 				empPojo = new EmployeePojo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getLong(5), rs.getString(6), rs.getString(7), rs.getInt(8));
+						rs.getLong(5), rs.getString(6), rs.getString(7), rs.getString(8));
 			}
 
 		} catch (SQLException e) {
@@ -49,7 +49,7 @@ public class AdminDaoImpl implements AdminDao {
 			ResultSet rs = stmt.executeQuery(query);
 			if (rs.next()) {
 				adminPojo = new AdminPojo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getLong(5), rs.getString(6), rs.getString(7));
+						rs.getLong(5), rs.getString(6), rs.getString(7), rs.getString(8));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -69,7 +69,7 @@ public class AdminDaoImpl implements AdminDao {
 			ResultSet rs = stmt.executeQuery(query);
 			while (rs.next()) {
 				EmployeePojo empPojo = new EmployeePojo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-						rs.getLong(5), rs.getString(6), rs.getString(7), rs.getInt(8));
+						rs.getLong(5), rs.getString(6), rs.getString(7), rs.getString(8));
 				allEmployees.add(empPojo);
 			}
 
@@ -153,7 +153,7 @@ public class AdminDaoImpl implements AdminDao {
 	@Override
 	public AdminPojo loginAdmin(AdminPojo pojoIn) {
 		Connection conn = DButil.obtainConnection();
-		AdminPojo loginPojo = new AdminPojo(0, "", "", "", 0, "", "");
+		AdminPojo loginPojo = new AdminPojo(0, "", "", "", 0, "", "", "");
 		AdminPojo fetchedPojo = fetchAdmin(pojoIn.getAdminId());
 		if (fetchedPojo.getAdminPassword().equals(pojoIn.getAdminPassword())) {
 			loginPojo = fetchedPojo;

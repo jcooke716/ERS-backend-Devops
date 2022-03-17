@@ -9,6 +9,7 @@ import java.util.List;
 
 import pojo.EmployeePojo;
 import pojo.ExpensePojo;
+import pojo.PendingPojo;
 
 public class EmployeeDaoImpl implements EmployeeDao {
 
@@ -25,9 +26,9 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		
 		ResultSet rs = stmt.executeQuery(query);
 		
-		if(rs.next()) {
+		while(rs.next()) {
 			employeePojo = new EmployeePojo(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4),
-					rs.getLong(5), rs.getString(6), rs.getString(7), rs.getInt(8));
+					rs.getLong(5), rs.getString(6), rs.getString(7), rs.getString(8));
 		}
 		
 		} catch (SQLException e) {
@@ -123,23 +124,64 @@ public class EmployeeDaoImpl implements EmployeeDao {
 		Statement stmt = null;
 		try {
 			stmt = conn.createStatement();
+			
+			String queryUpdate = "UPDATE employee_details SET emp_password=" + "'" + employeePojo.getEmployeePassword() + "'," + "emp_first_name=" + "'" + employeePojo.getEmployeeFirstName()+ "'"
+			        + ", emp_last_name=" + "'" + employeePojo.getEmployeeLastName() + "'," + "emp_contact=" + employeePojo.getEmployeeContact() + ", emp_email=" + 
+			        "'" + employeePojo.getEmployeeEmail() + "', " + "emp_address=" + "'" + employeePojo.getEmployeeAddress() + "'" + "WHERE emp_id=" + employeePojo.getEmployeeId();
+	
+	
+		int rowsTo = stmt.executeUpdate(queryUpdate);
+		
+		updatedEmployeePojo = fetchEmployee(employeePojo.getEmployeeId());
+			
+			
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
-		String queryUpdate = "UPDATE employee_details SET employee_password=" + "'" + employeePojo.getEmployeePassword() + "'" + "AND emp_first_name=" + "'" + employeePojo.getEmployeeFirstName()+ "'"
-				        + "AND emp_last_name=" + "'" + employeePojo.getEmployeeLastName() + "'" + "AND emp_contact=" + employeePojo.getEmployeeContact() + "AND emp_email=" + 
-				        "'" + employeePojo.getEmployeeEmail() + "'" + "AND emp_address=" + "'" + employeePojo.getEmployeeAddress() + "'" + "WHERE emp_id=" + employeePojo.getEmployeeId();
+			
+	
+		
+		return updatedEmployeePojo;
+}
+
+
+	@Override
+	public PendingPojo submitRequest(PendingPojo pendingPojo) {
+		
+		PendingPojo submitRequest = null;
+		
+        Connection conn = DButil.obtainConnection();
+		
+		Statement stmt = null;
 		
 		try {
-			int rowsTo = stmt.executeUpdate(queryUpdate);
+			stmt = conn.createStatement();
+			
+			String querySubmit = "INSERT INTO reimbursements_pending VALUES(DEFAULT, " + pendingPojo.getPendingRequest() + "," + pendingPojo.getPendingAmount() + ",'"
+					
+			+ pendingPojo.getPendingReason() + "', DEFAULT , '' , 1, 'Pending')";
+			
+			ResultSet rs = stmt.executeQuery(querySubmit);
+			
+			while(rs.next()) {
+				submitRequest = new PendingPojo(rs.getInt(1), rs.getInt(2), rs.getDouble(3), rs.getString(4), rs.getTimestamp(5).toString(), rs.getString(6),rs.getInt(7), rs.getString(8));
+				
+				
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
-		return updatedEmployeePojo;
+		
+		
+		
+		
+		
+		return submitRequest;
 	}
 
 }

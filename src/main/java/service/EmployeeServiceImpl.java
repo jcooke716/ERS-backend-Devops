@@ -6,6 +6,7 @@ import dao.EmployeeDao;
 import dao.EmployeeDaoImpl;
 import pojo.EmployeePojo;
 import pojo.ExpensePojo;
+import pojo.PendingPojo;
 
 public class EmployeeServiceImpl implements EmployeeService {
 	
@@ -40,6 +41,14 @@ public EmployeeServiceImpl() {
 	public EmployeePojo updateEmployeeInfo(EmployeePojo employeePojo) {
 		
 		return employeeDao.updateEmployeeInfo(employeePojo);
+	}
+
+
+
+	@Override
+	public PendingPojo submitRequest(PendingPojo pendingPojo) {
+		
+		return employeeDao.submitRequest(pendingPojo);
 	}
 
 }

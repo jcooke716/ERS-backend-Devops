@@ -102,7 +102,7 @@ public class EndPointsMain {
 			String employeeId = ctx.pathParam("eid");
 			List<ExpensePojo> allPendingExpenses = employeeService.viewPending(Integer.parseInt(employeeId));
 			ctx.json(allPendingExpenses);
-				});
+		});
 		
 		
 		// fetch all resolved Request endpoint
@@ -118,9 +118,20 @@ public class EndPointsMain {
 			EmployeePojo updatedEmployee = employeeService.updateEmployeeInfo(updateEmployee);
 			//returned a response of the book with the generated bookId 
 			ctx.json(updatedEmployee);
+			
+		});
+			
+		//Submit a request
+			
+			myServer.post("/api/v1/submitrequest", (ctx) -> {
+				PendingPojo submitR = ctx.bodyAsClass(PendingPojo.class);
+				PendingPojo submitRequest = employeeService.submitRequest(submitR);
+				
+				ctx.json(submitRequest);
+		});
 		
 
-		});
+		
 		
 	}
 }

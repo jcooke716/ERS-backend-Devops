@@ -9,7 +9,7 @@ public class EmployeePojo {
 	private long employeeContact;
 	private String employeeEmail;
 	private String employeeAddress;
-	private int employeeAdmin;
+	private String employeeRole;
 	
 	
 	public EmployeePojo() {
@@ -19,7 +19,7 @@ public class EmployeePojo {
 
 
 	public EmployeePojo(int employeeId, String employeePassword, String employeeFirstName, String employeeLastName,
-			long employeeContact, String employeeEmail, String employeeAddress, int employeeAdmin) {
+			long employeeContact, String employeeEmail, String employeeAddress, String employeeRole) {
 		super();
 		this.employeeId = employeeId;
 		this.employeePassword = employeePassword;
@@ -28,7 +28,7 @@ public class EmployeePojo {
 		this.employeeContact = employeeContact;
 		this.employeeEmail = employeeEmail;
 		this.employeeAddress = employeeAddress;
-		this.employeeAdmin = employeeAdmin;
+		this.employeeRole = employeeRole;
 	}
 
 
@@ -102,13 +102,13 @@ public class EmployeePojo {
 	}
 
 
-	public int getEmployeeAdmin() {
-		return employeeAdmin;
+	public String getEmployeeRole() {
+		return employeeRole;
 	}
 
 
-	public void setEmployeeAdmin(int employeeAdmin) {
-		this.employeeAdmin = employeeAdmin;
+	public void setEmployeeRole(String employeeRole) {
+		this.employeeRole = employeeRole;
 	}
 
 
@@ -117,11 +117,14 @@ public class EmployeePojo {
 		return "EmployeePojo [employeeId=" + employeeId + ", employeePassword=" + employeePassword
 				+ ", employeeFirstName=" + employeeFirstName + ", employeeLastName=" + employeeLastName
 				+ ", employeeContact=" + employeeContact + ", employeeEmail=" + employeeEmail + ", employeeAddress="
-				+ employeeAddress + ", employeeAdmin=" + employeeAdmin + "]";
+				+ employeeAddress + ", employeeRole=" + employeeRole + "]";
 	}
 
 
 	
+
+	
+
 	
 
 }

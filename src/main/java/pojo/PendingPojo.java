@@ -12,6 +12,7 @@ public class PendingPojo {
 	private String pendingResolved;
 	private int pendingResponse;
 	private String pendingStatus;
+	
 	public PendingPojo() {
 		super();
 		// TODO Auto-generated constructor stub

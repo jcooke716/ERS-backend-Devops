@@ -23,9 +23,9 @@ static Connection conn;
 		
 		//step 2 establish connection
 	
-		String connectionUrl = "jdbc:postgresql://localhost:5432/RES";
+		String connectionUrl = "jdbc:postgresql://ip-172-31-28-50.ec2.internal:8888/project1";
 		String userName = "postgres";
-		String password = "#Jmc071090";
+		String password = "mysecretpassword";
 		
 		
 		if(conn == null) {
